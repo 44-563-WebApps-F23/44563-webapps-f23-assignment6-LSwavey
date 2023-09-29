@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Assingment 6</title>
+ </head>
+<body>
+
+<h2>Author entry</h2>
+
+<form>
+    <label for="hidden-author">The hidden author name</label>
+    <input type="password" id="hidden-author" value="Dickens">
+    <br>
+    <label for="author-check">Guess the author</label>
+    <input type="text" id="author-check">
+    <br>
+    <input type="button" value="Check the guess" onclick="checkAuthor()">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+var good = 0;
+var oops = 0;
+
+function checkAuthor() {
+    var hdnAutInp = document.getElementById("hidden-author");
+    var gusAutInp = document.getElementById("author-check");
+
+    if(hdnAutInp.value == gusAutInp.value) {
+        good++;
+        alert("You got it right!");
+    }
+    else {
+        oops++
+        alert("Sorry");
+    }
+
+    var resultsEl = document.getElementById("result");
+    resultsEl.innerHTML = "Good: " + good + ", Oops: " + oops;
+}
+
+</script>
+
+</body>
+</html> 
