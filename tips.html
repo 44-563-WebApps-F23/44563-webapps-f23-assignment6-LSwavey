@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<title>Tips</title>
+ </head>
+<body>
+
+
+<h2>Landon Swavey shows tip amounts</h2>
+
+<form>
+    <label for="baseAmount">Enter base amount</label>
+    <input tpye="number" id="baseAmount" value="50">
+
+    <label for="tipPercentage">Enter the tip percent</label>
+    <input tpye="number" id="tipPercentage" value="15">
+
+    <input type="button" onclick="tips()" value="Show tip">
+</form>
+
+<p id="result">Tip Amount will be shown here </p>
+
+<script> 
+
+//Create the function
+function tips() {
+    //Get the base amount and tip percent
+    var baseAmount = parseFloat(document.getElementById('baseAmount').value)
+    var tipPercentage = parseFloat(document.getElementById('tipPercentage').value)
+
+    //Local variable
+    var toShow = "";
+
+    //Loop to calculate tip percent
+    for (var i = 0; i < 5; i++) {
+        var calculateTip = (baseAmount * (tipPercentage / 100)).toFixed(2)
+        toShow += tipPercentage + "% is " + calculateTip + "; ";
+        tipPercentage += 4;
+    }
+
+    document.getElementById('result').innerHTML = "Tips are " + toShow;
+}
+
+</script>
+
+</body>
+</html> 
