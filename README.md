@@ -6,4 +6,4 @@ Introduction to Java Script and DOM
 Hosted at: https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-LSwavey/
 Author: https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-LSwavey/blob/main/author.html
 Tip: https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-LSwavey/blob/main/tips.html
-Cruise: 
+Cruise: https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-LSwavey/blob/main/cruise.html
