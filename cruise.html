@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cruise</title>
+</head>
+ 
+<body>
+
+<h2>Landon Swavey goes on a cruise</h2>
+
+<form>
+
+    <label>
+        <input type="checkbox" id="box1" value="True">Shares Cabin
+    </label>
+    <label>
+        <input type="checkbox" id="box2" value="True">Breakfast
+    </label>
+    <label>
+        <input type="checkbox" id="box3" value="False">Pool Pass
+    </label>
+
+</form>
+
+<button onclick="selectCruise()">Select a cruise</button>
+
+
+<p id="result">Cruise Results here</p>
+
+<script> 
+
+    //Create global variable
+    var my_cruise= {};
+
+    function selectCruise() {
+        //Relink local variable
+        my_cruise = {};
+
+        //Implement properties
+        my_cruise.shared = document.getElementById('box1').checked;
+        my_cruise.breakfast = document.getElementById('box2').checked;
+        my_cruise.pool = document.getElementById('box3').checked;
+
+        //Replace with cruise information
+        document.getElementById('result').innerHTML = JSON.stringify(my_cruise);
+    }
+
+
+</script>
+
+</body>
+</html> 
