@@ -19,10 +19,20 @@
     <label>
         <input type="checkbox" id="box3" value="False">Pool Pass
     </label>
+    <br>
+    <label for="days">Enter the number of days</label>
+    <input type="text" id="days" value="1">
+    <br>
+    <label for="price">Enter price</label>
+    <input type="text" id="price" value="500">
+    <br>
+
 
 </form>
 
 <button onclick="selectCruise()">Select a cruise</button>
+<br>
+<button onclick="updateCruise()">Update the cruise</button>
 
 
 <p id="result">Cruise Results here</p>
@@ -42,10 +52,65 @@
         my_cruise.pool = document.getElementById('box3').checked;
 
         //Replace with cruise information
-        document.getElementById('result').innerHTML = JSON.stringify(my_cruise);
+        var message = "Checkbox values: ";
+        switch (true) {
+            case my_cruise.shared:
+                message += "true, ";
+                break;
+            default:
+                message += "false, ";
+        }
+        switch (true) {
+            case my_cruise.breakfast:
+                message += "true, ";
+                break;
+            default:
+                message += "false, ";
+        }
+        switch (true) {
+            case my_cruise.pool:
+                message += "true";
+                break;
+            default:
+                message += "false";
+        }
+
+        // Replace with message
+        document.getElementById('result').innerHTML = message;
     }
 
+</script>
 
+<script>
+
+    function updateCruise() {
+        //Get values from userInput
+        var days = parseInt(document.getElementById('days').value);
+        var price = parseFloat(document.getElementById('price').value);
+
+        //Local Variables
+        my_cruise.days = days;
+        my_cruise.price = price;
+
+        // Cruise information
+        var message = "Cruise details: ";
+            
+            if (my_cruise.shared) {
+                message += "Shares Cabin, ";
+            }
+            if (my_cruise.breakfast) {
+                message += "Breakfast, ";
+            }
+            if (my_cruise.pool) {
+                message += "Pool Pass, ";
+            }
+
+            message += "Days: " + my_cruise.days + ", ";
+            message += "Cost: $" + my_cruise.price.toFixed(2);
+
+            document.getElementById('result').innerHTML = message;
+        }
+    
 </script>
 
 </body>
