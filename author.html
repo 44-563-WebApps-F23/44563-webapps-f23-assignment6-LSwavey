@@ -44,9 +44,39 @@ function checkAuthor() {
 
 </script>
 
-<div class="container">
-    
+<div id="containerImage">
+    <img id="myImage" src="SF.jpg" height="100" width="100" alt="Image of San Francisco" onclick = "selectImage()">
 </div>
+
+<script>
+    //Create global variable
+    useImage = 1;
+
+    //Create the function selectImage()
+    function selectImage() {
+        var imageGet = document.getElementById('myImage');
+        //Switch cases 3 cases for 3 pictures
+        switch (useImage) {
+            case 1:
+                imageGet.src = 'WT.jpg';
+                useImage = 2;
+                break;
+            case 2:
+                imageGet.src = 'YK.jpg';
+                useImage = 3;
+                break;
+            case 3:
+                imageGet.src = 'SF.jpg';
+                useImage = 1;
+                break;
+            //Default case if no pictures are selected
+            default:
+                imageGet.src = 'SF.jpg';
+                useImage = 1;
+        }
+
+    }
+</script>
 
 </body>
 </html> 
