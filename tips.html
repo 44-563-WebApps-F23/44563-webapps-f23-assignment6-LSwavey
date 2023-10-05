@@ -43,5 +43,51 @@ function tips() {
 
 </script>
 
+<form>
+
+    <label>
+        <input type="radio" name="operation" value="sum" onclick="chooseOP()"> sum
+    </label>
+    <label>
+        <input type="radio" name="operation" value="difference" onclick="chooseOP()"> diff
+    </label>
+    <label>
+        <input type="radio" name="operation" value="product" onclick="chooseOP()"> mult
+    </label>
+
+    <p id="results">Results posted here</p>
+
+    <script>
+
+        function chooseOP() {
+            var base = parseFloat(document.getElementById('baseAmount').value);
+            var tip = parseFloat(document.getElementById('tipPercentage').value);
+            var operation = document.querySelector('input[name="operation"]:checked').value;
+            var result = "";
+
+            switch(operation) {
+                case "sum":
+                    result = "Sum of " + base + " and " + tip + " is " + (base + tip);
+                    break;
+                case "difference":
+                    result = "Difference of " + base + " and " + tip + " is " + (base - tip);
+                    break;
+                case "product":
+                    result = "Multiplication of " + base + " and " + tip + " is " + (base * tip);
+                    break;
+                default:
+                    result = "No operation chosen";
+                    break;
+            }
+
+            document.getElementById('results').innerHTML = result;
+        }
+
+
+    </script>
+
+</form>
+
+
 </body>
 </html> 
